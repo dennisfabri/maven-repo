@@ -30,7 +30,7 @@ jobs:
         run: mvn -B package --file pom.xml
         
       - name: Release
-        uses: qcastel/github-actions-maven-release@v1.12.3
+        uses: qcastel/github-actions-maven-release@master
         with:
           release-branch-name: "main"
 
@@ -49,3 +49,5 @@ jobs:
           #maven-publish-args: "-Dskip.unit.tests=true -Dskip.integration.tests=true"
           maven-release-publish: "true"
           maven-snapshot-publish: "false"
+          
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
