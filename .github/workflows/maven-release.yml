@@ -38,6 +38,12 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Setup git email
+        run: git config user.email "info@dennisfabri.de"
+
+      - name: Setup git user
+        run: git config user.name "Dennis Fabri"
+
       - name: Build with Maven
         run: mvn -B release:prepare release:perform --file pom.xml
         env:
