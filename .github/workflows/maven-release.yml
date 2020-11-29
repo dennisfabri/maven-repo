@@ -30,7 +30,7 @@ jobs:
         run: mvn -B package --file pom.xml
         
       - name: Release
-        uses: qcastel/github-actions-maven-release@1.12.3
+        uses: qcastel/github-actions-maven-release@v1.12.3
         with:
           release-branch-name: "main"
 
