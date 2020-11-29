@@ -45,7 +45,7 @@ jobs:
         run: git config user.name "Dennis Fabri"
 
       - name: Build with Maven
-        run: mvn -B release:prepare release:perform --file pom.xml
+        run: mvn -B release:prepare release:perform --file pom.xml -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
         
